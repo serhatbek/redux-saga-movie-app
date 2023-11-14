@@ -1,30 +1,10 @@
 import axios from 'axios';
 
-export default class TheMovieDbApi {
-  apiBaseUrl = 'https://www.themoviedb.org/3';
-  apiKey;
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${
+  import.meta.env.VITE_APP_MOVIE_API_KEY
+}`;
 
-  constructor(apiKey) {
-    this.apiKey = apiKey;
-  }
-
-  searchMovies = async (query) => {
-    const res = await axios.get(
-      `${this.apiBaseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`,
-      {
-        headers: {
-          Authorization: 'bearer ' + this.apiKey,
-          mode: 'no-cors',
-        },
-      }
-    );
-    return res;
-  };
-
-  getGenres = async () => {
-    const res = await axios.get(
-      `${this.apiBaseUrl}/genre/movie?api_key=${this.apiKey}`
-    );
-    return res;
-  };
-}
+export const fetchMovies = async (movieName) => {
+  const res = await axios.get(`${API_ENDPOINT}&s=${movieName}`);
+  return res;
+};
