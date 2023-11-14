@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Home, Layout, Movie } from './pages';
 
