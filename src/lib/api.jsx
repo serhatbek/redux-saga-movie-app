@@ -10,7 +10,13 @@ export default class TheMovieDbApi {
 
   searchMovies = async (query) => {
     const res = await axios.get(
-      `${this.apiBaseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`
+      `${this.apiBaseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`,
+      {
+        headers: {
+          Authorization: 'bearer ' + this.apiKey,
+          mode: 'no-cors',
+        },
+      }
     );
     return res;
   };

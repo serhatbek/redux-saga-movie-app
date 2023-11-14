@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import PopularMovies from './containers/PopularMovies';
-import MovieDetails from './containers/MovieDetails';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Layout from './components/Layout';
+import { Home, Layout, Movie } from './pages';
 
 const router = createBrowserRouter([
   {
@@ -11,11 +9,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <PopularMovies />,
+        element: <Home />,
       },
       {
         path: '/movie/:id',
-        element: <MovieDetails />,
+        element: <Movie />,
       },
     ],
   },
