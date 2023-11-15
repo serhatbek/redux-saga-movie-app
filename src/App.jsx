@@ -1,7 +1,11 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createHashRouter,
+} from 'react-router-dom';
 import { Home, Layout, Movie } from './pages';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Layout />,
