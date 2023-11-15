@@ -8,3 +8,8 @@ export const fetchMovies = async (movieName) => {
   const res = await axios.get(`${API_ENDPOINT}&s=${movieName}`);
   return res;
 };
+
+export const fetchMovie = async (movieID) => {
+  const res = await axios.get(`${API_ENDPOINT}&i=${movieID}`);
+  return res;
+};
