@@ -12,11 +12,10 @@ const Search = () => {
   const {
     movieList: { Error: error },
   } = useSelector((state) => state.movie);
-  //   console.log(movieList);
 
   const handleChange = (e) => {
     setName(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   useEffect(() => {

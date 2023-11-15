@@ -1,11 +1,11 @@
 import React from 'react';
-import { Search } from '../../components';
+import { MovieList, Search } from '../../components';
 
 const Home = () => {
   return (
     <>
       <Search />
-      {/* movie list */}
+      <MovieList />
     </>
   );
 };
